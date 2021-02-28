@@ -1,0 +1,39 @@
+{
+    "name": "nellyt/free-to-game-api-wrapper",
+    "description": "Wrapper for API https://www.freetogame.com",
+    "keywords": [
+        "free to game",
+        "api-wrapper"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Niall Tiernan",
+            "email": "nialltiernan93@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "lukasoppermann/http-status": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "FreeToGame\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "unit\\": "tests/unit",
+            "functional\\": "tests/functional",
+            "mocks\\": "tests/mocks"
+        }
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0",
+        "hoa/console": "^3.17"
+    }
+}
