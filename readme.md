@@ -1,4 +1,8 @@
 # Wrapper for FreeToGame API
+[![Latest Stable Version](https://poser.pugx.org/nellyt/free-to-game-api-wrapper/v)](//packagist.org/packages/nellyt/free-to-game-api-wrapper)
+[![Total Downloads](https://poser.pugx.org/nellyt/free-to-game-api-wrapper/downloads)](//packagist.org/packages/nellyt/free-to-game-api-wrapper)
+[![Latest Unstable Version](https://poser.pugx.org/nellyt/free-to-game-api-wrapper/v/unstable)](//packagist.org/packages/nellyt/free-to-game-api-wrapper)
+[![License](https://poser.pugx.org/nellyt/free-to-game-api-wrapper/license)](//packagist.org/packages/nellyt/free-to-game-api-wrapper)
 
 This is a PHP wrapper for the [FreeToGame API](https://www.freetogame.com/api-doc)
 
@@ -78,16 +82,19 @@ $sort = new \FreeToGame\Sort\AlphabeticalSort();
 $response = $client->fetchList(null, $sort);
 ```
 
-### Example: filtered and sorted
+### Example: multiple filters and sorted
 ```php
+$platformFilter = new \FreeToGame\Filters\PlatformFilter(new \FreeToGame\Filters\Platforms\Browser());
+
 $searchTerms = [
     new \FreeToGame\Filters\SearchTerms\Shooter(),
     new \FreeToGame\Filters\SearchTerms\Strategy(),
     new \FreeToGame\Filters\SearchTerms\Racing(),
 ];
-
 $tagFilter = new \FreeToGame\Filters\TagFilter($searchTerms);
+
 $filterCollection = new \FreeToGame\Filters\FilterCollection();
+$filterCollection->setPlatformFilter($platformFilter);
 $filterCollection->setTagFilter($tagFilter);
 
 $sort = new \FreeToGame\Sort\AlphabeticalSort();
