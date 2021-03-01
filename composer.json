@@ -14,9 +14,10 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^7.4|^8.0",
         "guzzlehttp/guzzle": "^7.2",
-        "lukasoppermann/http-status": "^3.1"
+        "lukasoppermann/http-status": "^3.1",
+        "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
