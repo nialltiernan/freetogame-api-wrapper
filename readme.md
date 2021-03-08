@@ -74,6 +74,13 @@ $filterCollection->setTagFilter($tagFilter);
 $response = $client->fetchList($filterCollection);
 ```
 
+###### Tag helper
+There are two helper functions available to assist build the array of _SearchTerms_.
+```php
+$shooter = \FreeToGame\Helpers\SearchTermFactory::getSearchTerm('shooter');
+$searchTerms = \FreeToGame\Helpers\SearchTermFactory::getSearchTerms(['shooter', 'zombie', 'permadeath']);
+```
+
 ### Sort By
 Lists of games can be sorted. 
 ```php
